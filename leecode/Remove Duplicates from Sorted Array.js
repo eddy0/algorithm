@@ -17,5 +17,3 @@ const removeDuplicates = function(nums) {
     return nums.length
 }
 
-
-

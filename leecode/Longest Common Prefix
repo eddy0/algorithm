@@ -1,0 +1,65 @@
+/*
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+Input: ["flower","flow","flight"]
+Output: "fl"
+
+ */
+
+const {log} = require('../utils')
+
+const isEqual = (array, str) => {
+    let len = str.length
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i].slice(0, len)
+        if (element !== str) {
+            return false
+        }
+    }
+
+    return true
+}
+
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+
+
+const longestCommonPrefix = function(strs) {
+    if (strs.length <= 0) {
+        return ''
+    }
+
+    let shortest = strs.reduce((a, b) => {
+        if (a.length > b.length) {
+            return b
+        } else {
+            return a
+        }
+    }, strs[0])
+
+    for (let i = shortest.length; i > 0; i--) {
+        let char = shortest.slice(0, i)
+        let equal = isEqual(strs, char)
+        if (equal) {
+            return char
+        }
+    }
+
+    return ''
+}
+
+
+log(longestCommonPrefix(["fflower", "low", "flight"]))
+
+
+
+
+
+
+
+
