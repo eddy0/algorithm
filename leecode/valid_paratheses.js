@@ -38,7 +38,6 @@ var isValid = function(s) {
 
 }
 
-
 const test = () => {
     assert.equal(isValid('[{()}]'), true, '1 is wrong')
 }
