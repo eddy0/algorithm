@@ -37,16 +37,20 @@ function TreeNode(val) {
  * @return {number[][]}
  */
 var levelOrderBottom = function(root) {
-    if (root) {
-        return []
-    }
-    let arr = [root.val]
-    if (root.left !== null) {
-        arr.unshift([root.left.value])
-    }
-    if (root.right !== null) {
-        arr[0].concat(root.right.val)
-    }
-    return [].concat(arr, levelOrderBottom(root.left), levelOrderBottom(root.right) )
+    var result = [];
+    var index = 0;
+    var leverage = function(node, index){
+        if(node === null) {
+            return
+        }
+        if (index >= result.length) {
+            result[index] = [];
+        }
 
+        result[index].push(node.val)
+        leverage(node.left, index + 1)
+        leverage(node.right, index + 1)
+    }
+    leverage(root, 0)
+    return result.reverse()
 };
