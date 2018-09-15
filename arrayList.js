@@ -1,4 +1,4 @@
-class ArrayList() {
+class ArrayList {
     constructor(){
         this.data = {}
         this.length = 0
