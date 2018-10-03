@@ -75,3 +75,7 @@ Trick:所以前面的 node 的个数的总和，都没有最后一层 node 的�
 - lookup by index can only go from head `(查找只能从头循环)`
 - delete and insert is super cheap, once found the element, just cut with next `(找到元素之后删除很方便)`
 - finding is less expensive than shifting
+
+| 题目    | solution                     | link     |
+| ------- | ---------------------------- | -------- |
+| two sum | 如何解决这个问题就比较麻烦了 | [link]() |
