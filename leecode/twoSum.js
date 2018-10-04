@@ -18,17 +18,3 @@ const testTwoSum = () => {
   // [0,1]
   twoSum(nums, target);
 };
-
-// testTwoSum()
-function fib(n) {
-  // add whatever parameters you deem necessary - good luck!
-  if (n === 1) {
-    return 1;
-  }
-  if (n === 2) {
-    return 1;
-  }
-  return fib(n - 1) + fib(n - 2);
-}
-
-fib(4);
