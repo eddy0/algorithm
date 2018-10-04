@@ -76,7 +76,7 @@ Trick:所以前面的 node 的个数的总和，都没有最后一层 node 的�
 -   delete and insert is super cheap, once found the element, just cut with next `(找到元素之后删除很方便)`
 -   finding is less expensive than shifting
 
-| number | title   | solution                                                                                         | link     |
-| ------ | ------- | ------------------------------------------------------------------------------------------------ | -------- |
-| 1      | two sum | 用 map 来保存, key 为值, value 为 index, 如果 target - arr[i] 可以找到, 说明可以配对, 否则就不行 | [link]() |
-| 2      | flatten | 递归来解决 flatten                                                                               | [link]() |
+| number | title   | solution                     | link     |
+| ------ | ------- | ---------------------------- | -------- |
+| 1      | two sum | 如何解决这个问题就比较麻烦了 | [link]() |
+| 2      | flatten | 递归来解决 flatten           | [link]() |
