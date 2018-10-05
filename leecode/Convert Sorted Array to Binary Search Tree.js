@@ -16,7 +16,6 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
  -10  5
  */
 
-
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -26,8 +25,8 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
  */
 
 function TreeNode(val) {
-    this.val = val;
-    this.left = this.right = null;
+    this.val = val
+    this.left = this.right = null
 }
 /**
  * @param {number[]} nums
@@ -41,10 +40,10 @@ var sortedArrayToBST = function(nums) {
     let val = nums[pivot]
     let head = new TreeNode(val)
     head.left = sortedArrayToBST(nums.slice(0, pivot))
-    head.right = sortedArrayToBST(nums.slice(pivot+1))
+    head.right = sortedArrayToBST(nums.slice(pivot + 1))
     return head
-};
+}
 
-let head = sortedArrayToBST([-10,-3,0,5,9])
+let head = sortedArrayToBST([-10, -3, 0, 5, 9])
 
 console.log(head)

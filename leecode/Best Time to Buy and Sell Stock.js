@@ -16,25 +16,25 @@ Example 2:
 Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
-
+        
  */
 
 // 初始化为 0  array 里面 一个从前往后, 一个从后往前判断, 如果有 profit 比 之前的 result 大, 就取代 result
-const log = console.log.bind(console)
+const log = console.log.bind(console);
 
 var maxProfitOriginal = function(prices) {
-    let result = 0
-    for (let i = 0; i < prices.length; i++) {
-        let buy = prices[i]
-        for (let j = prices.length - 1; j > i; j-- ) {
-            let sell = prices[j]
-            let profit = sell - buy
-            if (profit > result) {
-                result = profit
-            }
-        }
+  let result = 0;
+  for (let i = 0; i < prices.length; i++) {
+    let buy = prices[i];
+    for (let j = prices.length - 1; j > i; j--) {
+      let sell = prices[j];
+      let profit = sell - buy;
+      if (profit > result) {
+        result = profit;
+      }
     }
-    return result
+  }
+  return result;
 };
 
 /**
@@ -43,24 +43,22 @@ var maxProfitOriginal = function(prices) {
  */
 // 这里会把 index 也考虑进来
 var maxProfit = function(prices) {
-    let result = 0
-    let buyDate
-    let sellDate
-    for (let i = 0; i < prices.length; i++) {
-        let buy = prices[i]
-        for (let j = prices.length - 1; j > i; j-- ) {
-            let sell = prices[j]
-            let profit = sell - buy
-            if (profit > result) {
-                result = profit
-                buyDate = i
-                sellDate = j
-            }
-        }
+  let result = 0;
+  let buyDate;
+  let sellDate;
+  for (let i = 0; i < prices.length; i++) {
+    let buy = prices[i];
+    for (let j = prices.length - 1; j > i; j--) {
+      let sell = prices[j];
+      let profit = sell - buy;
+      if (profit > result) {
+        result = profit;
+        sellDate = j;
+      }
     }
+  }
 
-    return [result, buyDate, sellDate]
-
+  return [result, buyDate, sellDate];
 };
 
-log(maxProfit([7,1,5,3,6,4]))
+log(maxProfit([7, 1, 5, 3, 6, 4]));
