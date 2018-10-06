@@ -11,8 +11,8 @@ class Node {
 
 class LinkedList {
     constructor() {
-        this.head = new Node()
         this._length = 0
+        this.head = new Node()
     }
 
     isEmpty() {
