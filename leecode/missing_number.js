@@ -28,15 +28,16 @@ function getSum(n) {
  * @return {number}
  */
 var missingNumber = function(nums) {
+    // get the sum of the current array
     let sum = 0
     for (let i = 0; i < nums.length; i++) {
         let n = nums[i]
         sum += n
     }
-    console.log(sum)
+    // get the sum what it is supposed to be
     let total = getSum(nums.length)
     return total - sum
 }
 
-let a = missingNumber(6)
-console.log(missingNumber)
+let a = missingNumber([1])
+console.log(a)
