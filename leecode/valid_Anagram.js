@@ -15,10 +15,10 @@ You may assume the string contains only lowercase alphabets.
  */
 
 function sortStr(s) {
-    return s
-        .split('')
-        .sort()
-        .join('')
+  return s
+    .split('')
+    .sort()
+    .join('')
 }
 
 /**
@@ -27,25 +27,25 @@ function sortStr(s) {
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    // first sort from a - z, then compare
-    let s1 = sortStr(s)
-    let t1 = sortStr(t)
-    return s1 === t1
+  // first sort from a - z, then compare
+  let s1 = sortStr(s)
+  let t1 = sortStr(t)
+  return s1 === t1
 }
 
 var _isAnagram = function(s, t) {
-    let o = {}
-    for (let key of s) {
-        o[key] = o[key] === undefined ? 1 : o[key] + 1
+  let o = {}
+  for (let key of s) {
+    o[key] = o[key] === undefined ? 1 : o[key] + 1
+  }
+  for (let k of t) {
+    if (o[k] === undefined || o[k] === 0) {
+      return false
     }
-    for (let k of t) {
-        if (o[k] === undefined || o[k] === 0) {
-            return false
-        }
-        o[k] -= 1
-    }
-    console.log(o)
-    return true
+    o[k] -= 1
+  }
+  console.log(o)
+  return true
 }
 
 let test = _isAnagram('anagram', 'nagaram')
