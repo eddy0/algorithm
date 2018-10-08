@@ -103,7 +103,6 @@ const preOrder = function(tree) {
 - balanced binary tree 任何节点高度差 <= 1, every node differ by 1 or else
 - complete binary tree 完全二叉树, every level, except possibly the last, is completely filled, all nodes as far as left as possible, 除了最后一层必须是满的不能有 null, 并且 null 要在右边,
 - binary search tree 每个 node 左边都要这个 value 小, 右边都比这个 value 大, every single node in the tree, the value in its left subtree are all smaller than its value, and the values in its right subtree are all larger than its value
-<<<<<<< HEAD
 
 #### discussion
 
@@ -155,7 +154,6 @@ const isBalanced = function(root) {
     5   5
  1   3  3  1
 2 4 6 8 2 4 6 8
-
 ```
 
 ```js
@@ -179,9 +177,11 @@ const isSymmetric = function(node1, node2) {
 }
 ```
 
+#### binary search tree
+
+1. how to determin a binary tree is BST
+
 ---
-=======
->>>>>>> 95d1607a09f51b2886992ee05a77bcd95cc171e3
 
 # How to Implement by JS?
 
