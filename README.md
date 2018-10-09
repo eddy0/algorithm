@@ -181,6 +181,18 @@ const isSymmetric = function(node1, node2) {
 
 1. how to determin a binary tree is BST
 
+```
+     10
+   5   15
+  2 7 11 20
+```
+
+1. primative idea: 检查 all left-subtree, if they are smaller, all right are larger
+2. root.left < root.value, root.right > root.value
+
+3. print BST keys in the given range
+   give two value k1 and k2(k1< k2) and a root pointer to a binary search tree. print all the keys of
+
 ---
 
 # How to Implement by JS?
