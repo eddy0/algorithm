@@ -191,7 +191,42 @@ const isSymmetric = function(node1, node2) {
 2. root.left < root.value, root.right > root.value
 
 3. print BST keys in the given range
-   give two value k1 and k2(k1< k2) and a root pointer to a binary search tree. print all the keys of
+   git two value k1 and k2 , **k1 < k2** and a root pointer to a binary search, print all that
+
+```js
+function inOrder(root, k1, k2) {
+  if (root === null) {
+    return
+  }
+  inOrder(root.left, k1, k2)
+  if (root.value > k1 || root.value < k2) {
+    console.log(root.value)
+  }
+  inOrder(root.right, k1, k2)
+}
+```
+
+进一步解决的问题在于可以把 k1 和 k2 范围之外的剪掉
+
+```js
+function inOrder(root, k1, k2) {
+  if (root === null) {
+    return
+  }
+  // 左边一定要比 k1 大
+  if (root.left > k1) {
+    inOrder(root.left, k1, k2)
+  }
+
+  if (root.value >= k1 || root.value <= k2) {
+    console.log(root.value)
+  }
+  // 右边一定要比 k2 小
+  if (root.right < k1) {
+    inOrder(root.right, k1, k2)
+  }
+}
+```
 
 ---
 
