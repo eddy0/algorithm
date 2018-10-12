@@ -59,6 +59,14 @@ Trick:所以前面的 node 的个数的总和，都没有最后一层 node 的�
   - This pattern involves dividing a data set into smaller chunks and then repeating a process with a subset of data.
   - This pattern can tremendously decrease time complexity
 
+#### linklist
+
+1. keypoint
+
+- make sure it is not a null pointer when de-ref, 也就是要得到 p.value, p 不能为 null
+- never ever lost the control of the head pointer of the linklist, 注意头节点
+- 分析 linklist, 要知道 prev, current, next 是什么, 先保存 next, 再改变 current
+
 #### tree
 
 1. tree traverse
