@@ -41,38 +41,48 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being
     modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
  */
 
-var valid = function(n) {
-  let obj = {}
-  if (obj[n] !== '.') {
-    return false
-  }
-  obj[n] = 1
-}
-
-var validLine = function(n, obj) {
-  if (n !== '.') {
-    if (obj[n] !== undefined) {
-      return false
-    }
-    obj[n] = 1
-  }
-}
-
 var isValidSudoku = function(board) {
-  let row
-  let column
-  for (let x = 0; x < 9; x++) {
-    let objRow = {}
-    let objCol = {}
-    for (let y = 0; y < 9; y++) {
-      validLine(board[y][x], objRow)
-      validLine(board[x][y], objCol)
-    }
-    console.log(objRow)
-  }
   for (let i = 0; i < 9; i++) {
     let obj = {}
-    let m1 = Math.floor(i / 3) * 3
-    let m2 = (i % 3) * 3
+    for (let j = 0; j < 9; j++) {
+      let row = board[i][j]
+      if (row !== '.') {
+        if (obj[row] !== undefined) {
+          return false
+        }
+        obj[row] = true
+      }
+    }
   }
+
+  for (let i = 0; i < 9; i++) {
+    let obj = {}
+    for (let j = 0; j < 9; j++) {
+      let col = board[j][i]
+      if (col !== '.') {
+        if (obj[col] !== undefined) {
+          return false
+        }
+        obj[col] = true
+      }
+    }
+  }
+
+  for (let i = 0; i < 9; i++) {
+    let obj = {}
+    let row = Math.floor(i / 3) * 3
+    let col = (i % 3) * 3
+    for (let x = 0; x < 3; x++) {
+      for (let y = 0; y < 3; y++) {
+        let n = board[row + x][col + y]
+        if (n !== '.') {
+          if (obj[n] !== undefined) {
+            return false
+          }
+          obj[n] = 1
+        }
+      }
+    }
+  }
+  return true
 }
