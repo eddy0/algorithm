@@ -71,13 +71,15 @@ rotate the input matrix in-place such that it becomes:
 
 var rotate = function(matrix) {
   let len = matrix.length
-  for (let i = 0; x < len / 2; i++) {
-    let j = len - 1 - i // 要加分号
+  // 翻转行
+  for (let i = 0; i < len / 2; i++) {
+    let j = len - 1 - i // 这里要加分号, 不然报错
     ;[matrix[i], matrix[j]] = [matrix[j], matrix[i]]
   }
 
+  // 对折
   for (let x = 0; x < len; x++) {
-    for (let y = x + 0; y < len; y++) {
+    for (let y = x + 1; y < len; y++) {
       ;[matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]]
     }
   }
