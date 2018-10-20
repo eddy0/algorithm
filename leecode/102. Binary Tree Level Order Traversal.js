@@ -29,16 +29,16 @@ return its level order traversal as:
  * @return {number[][]}
  */
 var levelOrder = function(root) {
-  let arr = []
-  function helper(root, level) {
-    if (root == null) {
-      return
+    let arr = []
+    function helper(root, level) {
+        if (root == null) {
+            return
+        }
+        arr[level] = arr[level] || []
+        arr[level].push(root.val)
+        helper(root.left, level + 1, arr)
+        helper(root.right, level + 1, arr)
     }
-    arr[level] = arr[level] || []
-    arr[level].push(root.val)
-    helper(root.left, level + 1, arr)
-    helper(root.right, level + 1, arr)
-  }
-  helper(root, 0)
-  return arr
+    helper(root, 0)
+    return arr
 }
