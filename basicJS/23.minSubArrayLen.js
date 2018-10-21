@@ -12,10 +12,21 @@ minSubArrayLen([2,1,6,5,4], 9)  --> 2
 */
 
 function minSubArrayLen(array, target) {
-    for (let i = 0; i < array.length; i++) {
-        let n = array[n]
-        if (n >= target) {
-            return n
+    let total = 0
+    let start = 0
+    let end = 0
+    let minLen = array.length + 1
+    while (start < array.length) {
+        if (total < target && end < array.length) {
+            total += array[end]
+            end++
+        } else if (total > target) {
+            minLen = Math.min(minLen, end - start)
+            total -= total[start]
+            start++
+        } else {
+            break
         }
     }
+    return (minLen = array.length + 1 ? 0 : minLen)
 }
