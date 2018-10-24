@@ -37,3 +37,19 @@ var convert = function(array) {
     root = helper(root, array, 0)
     return JSON.stringify(root)
 }
+
+var inorder = function(array) {
+    let root
+    var helper = function(root, array) {
+        if (array.length <= 0) {
+            return null
+        }
+        let mid = Math.floor(array.length / 2)
+        root = new Node(array[mid])
+        root.left = helper(root.left, array.slice(0, mid))
+        root.right = helper(root.right, array.slice(mid + 1))
+        return root
+    }
+    root = helper(root, array)
+    return root
+}
