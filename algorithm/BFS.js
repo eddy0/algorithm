@@ -32,7 +32,7 @@ var bfs = function(root) {
     return data
 }
 
-var preorder = function(array) {
+var bfsToTree = function(array) {
     if (array.length === 0) {
         return null
     }
