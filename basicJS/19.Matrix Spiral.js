@@ -4,8 +4,8 @@ Create a square matrix of a given size in which elements are in spiral order.
 describe("Matrix Spiral", () => {
  it("Should implement matrix spiral", () => {
   assert.deepEqual(spiral(3), [[1, 2, 3], [8, 9, 4], [7, 6, 5]]);
- });
-});
+ })
+})
 [1, 2, 3]
 [8, 9, 4]
 [7, 6, 5]
@@ -23,7 +23,7 @@ const spiral = (n) => {
     let startRow = 0
     let endRow = n - 1
     let startColumn = 0
-    let endColumn = n -1
+    let endColumn = n - 1
     let matrix = []
     for (let i = 0; i < n; i++) {
         matrix.push([])
@@ -40,13 +40,13 @@ const spiral = (n) => {
         }
         endColumn--
         for (let i = endColumn; i >= startColumn; i--) {
-            matrix[endRow][i]  = count
-            count ++
+            matrix[endRow][i] = count
+            count++
         }
         endRow--
         for (let i = endRow; i >= startRow; i--) {
             matrix[i][startColumn] = count
-            count ++
+            count++
         }
         startColumn++
     }
