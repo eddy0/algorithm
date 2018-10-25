@@ -1,22 +1,38 @@
 // breadth first solution
-// 利用 queue  的方式
-var bfs = function(array) {
-    let array = []
-    if (tree === null) {
-        return []
-    }
-    array.push(tree.val)
-    var helper = function(tree, array) {
-        let left = tree.left
-        let right = tree.right
-        while (left && right) {
-            array.push(left.val)
-            array.push(right.val)
-        }
+// 利用 queue  的方式, 就是两个 array, 如果root 存在 left 或者 right,
+// 就 push 到 queue 里面, 然后每次都 shift 第一个来处理, 这样就可以水平方向的优先
+
+/*
+[root, root.left, root.right, ]
+[root]  -> [root.left, root.right]  --> [root.right, root.left.left...]
+*/
+
+class Node {
+    constructor(val) {
+        this.val = val
+        this.left = null
+        this.right = null
     }
 }
 
-var convert = function(array) {
+var bfs = function(root) {
+    let data = []
+    let queue = []
+    queue.push(root)
+    while (queue.length > 0) {
+        let node = queue.shift()
+        data.push(node.val)
+        if (node.left) {
+            queue.push(node.left)
+        }
+        if (node.right) {
+            queue.push(node.right)
+        }
+    }
+    return data
+}
+
+var preorder = function(array) {
     if (array.length === 0) {
         return null
     }
