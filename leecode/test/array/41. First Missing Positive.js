@@ -30,7 +30,7 @@ var firstMissingPositive = function(nums) {
         while (
             nums[i] > 0 &&
             nums[i] <= nums.length &&
-            nums[nums[i] - 1] !== nums[1]
+            nums[nums[i] - 1] !== nums[i]
         ) {
             // [1,2,3,4] --> 查看是否在正确的 index 位置上面
             // 如果 i 不是应该正确的值, 那么就找到正确的位置, 进行一次替换
