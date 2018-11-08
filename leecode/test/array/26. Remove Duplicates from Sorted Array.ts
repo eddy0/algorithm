@@ -28,13 +28,13 @@ const removeDuplicates = function(nums: number[]) {
     if (nums.length < 2) {
         return nums.length
     }
-    let res: number = 0
-    for (let i = 0; i < nums.length; i++) {
-        let n = nums[res]
-        if (n !== nums[i]) {
+    let res: number = 1
+    for (let i = 1; i < nums.length; i++) {
+        let n = nums[i]
+        if (nums[res - 1] !== n) {
+            nums[res] = n
             res++
-            nums[res] = res[i]
         }
     }
-    return res + 1
+    return res
 }
