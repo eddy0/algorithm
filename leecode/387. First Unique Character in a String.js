@@ -14,11 +14,19 @@ Note: You may assume the string contain only lowercase letters.
 
 */
 
+const log = console.log.bind(console)
+
 /**
  * @param {string} s
  * @return {number}
  */
 var firstUniqChar = function(s) {
+  let count = new Array(26).fill(0)
+  for (let i = 0; i < s.length; i++) {
+      let n = s[i].charCodeAt() - 97
+      count[n]++
+  }
+  log(count)
   
 }
 
