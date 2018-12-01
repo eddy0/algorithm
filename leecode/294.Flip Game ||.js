@@ -31,6 +31,7 @@ var canWin = function(s) {
   return helper(s, map)
 };
 
+// 不太懂
 var helper = function(s, map) {
   if (map.hasKey(s)) {
     return map.get(s)
