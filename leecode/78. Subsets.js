@@ -18,13 +18,15 @@ Output:
   []
 ]
 */
+
+
 var helper = function(res, array, nums, index) {
-  res.push(array)
+  res.push([...array])
   for (let i = index; i < nums.length; i++) {
     let n = nums[i]
     array.push(n)
-    helper(res, array, nums, index + 1)
-    array.splice(nums.length - 1, 1)
+    helper(res, array, nums, i + 1)
+    array.pop()
   }
 }
 /**
@@ -41,6 +43,4 @@ var subsets = function(nums) {
   return res
 }
 
-
-let b = subsets([1,2,3])
-console.log(b)
+subsets([1,2,3])
