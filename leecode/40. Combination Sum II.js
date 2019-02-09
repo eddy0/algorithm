@@ -36,7 +36,6 @@ var helper = function(res, array, candidates, target, start) {
     return
   }
   for (let i = start; i < candidates.length; i++) {
-    console.log('i', i, start, array, candidates[i])
     if (i !== start && candidates[i] === candidates[i - 1]) {
       continue
     }
