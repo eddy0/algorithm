@@ -23,14 +23,13 @@ Note that different sequences are counted as different combinations.
 Therefore the output is 7.
 */
 
-
 var helper = function(res, array, nums, target) {
   if (target < 0) {
-    return 
+    return
   }
   if (target === 0) {
     res.push([...array])
-    return  
+    return
   }
   for (let i = 0; i < nums.length; i++) {
     let n = nums[i]
@@ -39,7 +38,6 @@ var helper = function(res, array, nums, target) {
     array.pop()
   }
 }
-
 
 /**
  * @param {number[]} nums
@@ -50,12 +48,10 @@ var combinationSum4 = function(nums, target) {
   let res = []
   let array = []
   if (nums.length <= 0) {
-    return res
+    return res.length
   }
   helper(res, array, nums, target)
-  console.log(res)
-  return res
-};
+  return res.length
+}
 
-
-combinationSum4([1,2,3], 4)
+combinationSum4([1, 2, 3], 4)
