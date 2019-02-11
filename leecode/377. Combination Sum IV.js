@@ -45,13 +45,17 @@ var helper = function(res, array, nums, target) {
  * @return {number}
  */
 var combinationSum4 = function(nums, target) {
-  let res = []
-  let array = []
-  if (nums.length <= 0) {
-    return res.length
+  let res = new Array(target + 1).fill(0)
+  res[0] = 1
+  for (let i = 1; i < res.length; i++) {
+    for (let num of nums) {
+      if (i - num >= 0) {
+        res[i] += res[i - num]
+      }
+    }
   }
-  helper(res, array, nums, target)
-  return res.length
+  return res
 }
 
-combinationSum4([1, 2, 3], 4)
+let r = combinationSum4([1, 2, 3], 4)
+console.log(r)
