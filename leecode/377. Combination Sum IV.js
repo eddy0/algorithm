@@ -57,5 +57,5 @@ var combinationSum4 = function(nums, target) {
   return res
 }
 
-let r = combinationSum4([1, 2, 3], 4)
-console.log(r)
+
+combinationSum4([1, 2, 3], 4)
