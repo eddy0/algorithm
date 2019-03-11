@@ -12,6 +12,6 @@ Input: word1 = "makes", word2 = "coding"
 Output: 1
 Note:
 You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
-
+ // add this distance
 
 */
