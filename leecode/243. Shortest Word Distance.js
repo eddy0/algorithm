@@ -36,6 +36,7 @@ var shortestDistance = function(words, word1, word2) {
       res = Math.min(res, Math.abs())
     }
   }
+  
   return res
 };
 
