@@ -12,6 +12,15 @@ class Solution:
 
 
 """
+第 0 个元素肯定是不会重复的, 所以重复是从 第 1 个元素开始, 设 res = 1, 
+用 res - 1 来 找到前一个元素的值
+遍历 list 的时候 i 的和前面 res - 1 的进行比较,
+如果不是重复的话, 就让 res 下标所在的元素等于 i,  res++
+如果是重复的话就直接跳过, 表示当前 res 的下标的元素是重复的, 之后就可以直接覆盖掉
+
+"""
+
+"""
 Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
 
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
