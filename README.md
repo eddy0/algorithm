@@ -2,6 +2,30 @@
 
 a conclusion and handbook on data structure and algorithm
 
+
+# String
+
+| number | title   | difficulty |  ---- |
+| ----   |   ----  | ---------- |  ---- |
+| 28	| Implement strStr() | easy	| :100:|
+| 14	| Longest Common Prefix |	easy|
+| 58	| Length of Last Word |	easy|
+| 387|	First Unique Character in a String |	easy|
+| 383|	Ransom Note |	easy|
+| 344|	Reverse String |	easy|
+| 151|	Reverse Words in a String |	easy|
+| 186|	Reverse Words in a String II |	easy|
+| 345|	Reverse Vowels of a String |	easy|
+| 205|	Isomorphic Strings |	easy|
+| 293|	Flip Game |	easy|
+| 294|	Flip Game II |	easy|
+| 290|	Word Pattern |	easy|
+| 242|	Valid Anagram |	easy|
+| 49|   Group Anagrams |	easy|
+| 249|	Group Shifted Strings |	easy|
+| 87|   Scramble String |easy|
+
+
 #### Recursion
 
 -   function calls itself
@@ -262,3 +286,5 @@ function inOrder(root, k1, k2) {
 | 2      | flatten | 递归来解决 flatten           | [link]() |
 
 Array.apply(null, {length: 5}).map(Function.call, Math.random)
+
+
